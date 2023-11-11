@@ -1,0 +1,54 @@
+.giveway{
+    max-width: 800px;
+    height: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+button {
+    background-color:#37413c44; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Padding inside the button */
+    cursor: pointer;
+    outline: none; /* Remove button outline */
+    margin: 20px; /* Add space between the message and button */
+}
+
+.ajouter:hover {
+    background-color:rgba(53, 11, 11, 0.76); /* Button background color on hover */
+}
+
+input{
+    width: 200px;
+    height: 20px;
+}
+.mat-table {
+    min-width: 1000px; /* Adjust the minimum width of the table */
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+}
+
+.mat-column-nom,
+.mat-column-description,
+.mat-column-dateDebut,
+.mat-column-dateFin,
+.mat-column-ticketsMax{
+    flex: 1 1 auto; /* Adjust the flex properties to control column width */
+}
+.homeDash{
+    max-width: 1200px;
+    height: 80vh;
+    margin: 50px auto;
+    background-color: unset;
+    display: flex;
+    flex-direction: column;
+}
+.chart-container {
+    width: 50vh; /* Adjust the width as needed */
+    margin: 0 auto; /* Centers the container horizontally */
+    height: 500px;
+}

@@ -1,0 +1,37 @@
+.mat-table {
+    min-width: 1000px; /* Adjust the minimum width of the table */
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    overflow-y: auto; /* Enable vertical scrollbar */
+    margin: auto;
+}
+
+.mat-column-username,
+.mat-column-email,
+.mat-column-prizeStatus,
+.mat-column-registryDate {
+    flex: 1 1 auto; /* Adjust the flex properties to control column width */
+}
+button {
+    background-color:#37413c44; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Padding inside the button */
+    cursor: pointer;
+    outline: none; /* Remove button outline */
+    margin: 10px; /* Add space between the message and button */
+}
+
+.sendMail:hover {
+    background-color:rgba(53, 11, 11, 0.76); /* Button background color on hover */
+}
+
+.claimbtn:hover {
+    background-color:rgba(53, 11, 11, 0.76); /* Button background color on hover */
+}
+
+ .claimbtn:disabled {
+    pointer-events: none;
+     background-color: rgba(53, 11, 11, 0.76);
+}

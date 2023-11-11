@@ -1,0 +1,14 @@
+<div class="center-container">
+  <mat-card class="close">
+    Partcicpez au jeux-concours . Entrez le numéro trouvé sur votre ticket de caisse
+  </mat-card>
+  <form [formGroup]="form">
+  <div fxLayout="column">
+    <mat-form-field>
+    <input matInput formControlName="ticketNumber" placeholder="Entrer le numéro de votre ticket">
+      <mat-error> ce numéro doit contenir 10 chiffres</mat-error>
+    </mat-form-field>
+  <button class="participate" mat-stroked-button [disabled]="form.invalid || form.pristine" (click)="validateTicket()">Participer</button>
+  </div>
+  </form>
+</div>

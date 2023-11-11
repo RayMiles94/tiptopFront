@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <div class="footer">
+      <p>© 2023 - The tip top | Tous droits réservés</p>
+      <a class="footer-display" href="">Mention légale</a>
+    </div>
+  </mat-toolbar>
+  <div class="cookie-message" *ngIf="!acceptedCookies">
+    <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site. En continuant à naviguer, vous acceptez notre utilisation des cookies.</p>
+    <button mat-button color="accent" id="accept-cookie" (click)="acceptCookies()">Accepter</button>
+  </div>
+  

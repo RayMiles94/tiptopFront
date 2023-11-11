@@ -1,0 +1,54 @@
+/* footer.component.css */
+
+/* Styling for the footer container */
+mat-toolbar {
+    background-color: #333 !important ; /* Background color of the footer */
+    color: #fff; /* Text color */
+    padding: 10px; /* Padding around the footer content */
+    font-size: 14px; /* Font size for the footer text */
+    bottom: 0;
+    width: 100%;
+
+}
+  
+  /* Styling for the copyright text */
+  .mat-toolbar .footer p {
+    margin: 0;
+    font-weight: bold; /* Make the text bold */
+
+  }
+  
+  /* Styling for the legal notice link */
+  .mat-toolbar .footer a.footer-display {
+    color: #f7f7f7; /* Link color */
+    text-decoration: none; /* Remove underline from the link */
+    margin-right: 20px; /* Add space between the link and copyright text */
+  }
+  
+  /* Styling for the cookie message */
+  .cookie-message {
+    background-color: #f7f7f7; /* Background color for the cookie message */
+    padding: 10px; /* Padding around the cookie message */
+    text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+
+  }
+  
+  /* Styling for the accept cookie button */
+  .cookie-message button {
+    background-color:#37413c44; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 5px 10px; /* Padding inside the button */
+    cursor: pointer;
+    outline: none; /* Remove button outline */
+    margin-top: 10px; /* Add space between the message and button */
+  }
+  
+  /* Style the accept cookie button on hover */
+  .cookie-message button:hover {
+    background-color:rgba(53, 11, 11, 0.76); /* Button background color on hover */
+  }
+  

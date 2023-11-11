@@ -1,0 +1,45 @@
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65vh; /* Make the container full height of the viewport */
+}
+.center-container  .error-snackbar {
+    background-color: #f44336; /* Red background for error */
+    color: white;
+}
+
+.mat-table {
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 400px; /* Set the desired height for the table */
+    overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+mat-form-field{
+    width: 300px !important;
+    height: 30px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+button {
+    background-color:#37413c44; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 5px 10px; /* Padding inside the button */
+    cursor: pointer;
+    outline: none; /* Remove button outline */
+    margin-top: 10px; /* Add space between the message and button */
+}
+
+.participate:hover {
+    background-color:rgba(53, 11, 11, 0.76); /* Button background color on hover */
+}
+
+.participate:disabled {
+    background-color: rgba(63, 72, 68, 0.16); /* Button background color on hover */
+}

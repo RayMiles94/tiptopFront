@@ -1,0 +1,15 @@
+.mat-table {
+    min-width: 900px; /* Adjust the minimum width of the table */
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    overflow-y: auto; /* Enable vertical scrollbar */
+    margin: auto;
+}
+
+.mat-column-username,
+.mat-column-email,
+.mat-column-prizeStatus,
+.mat-column-registryDate {
+    flex: 1 1 auto; /* Adjust the flex properties to control column width */
+}

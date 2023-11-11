@@ -1,0 +1,14 @@
+<mat-toolbar>
+  <div class="upper-right" fxLayout="row">
+    <div>Bonjour {{ personService.loggedUser }}, </div>
+    <button id="signout-button" (click)="handleSignOut()">Se déconnecter</button>
+  </div>
+  <div class="right">
+  <a routerLink="/myAccount" routerLinkActive="active-link">
+    <button mat-button>JOUER</button>
+  </a>
+  <a routerLink="/historique" routerLinkActive="active-link">
+    <button mat-button >HISTORIQUE</button>
+  </a>
+  </div>
+</mat-toolbar>

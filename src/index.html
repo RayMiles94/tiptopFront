@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tiptop</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PTDTXD216"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8PTDTXD216');
+  </script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="//code.tidio.co/yqzpar5dge6vo32fxycwididsvi9ioke.js" async></script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '670909031477948',
+        cookie: true,
+        xfbml: true,
+        version: 'v1.2'
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <script>
+    (function() {
+// modify whitelisted urls here
+      var whitelistedUrls = [
+        'https://localhost:4200/home',
+      ];
+
+      var shouldShowWidget = (function isCurrentUrlWhitelisted() {
+        var currentUrl = window.location.href;
+        var isWhitelisted = false;
+        whitelistedUrls.forEach(url => {
+          if (currentUrl.indexOf(url) > -1) {
+            isWhitelisted = true;
+          }
+        })
+        return isWhitelisted;
+      })();
+
+      function onTidioChatApiReady() {
+        if (shouldShowWidget) {
+          window.tidioChatApi.show();
+        }
+        else {
+          window.tidioChatApi.hide();
+        }
+      }
+      if (window.tidioChatApi) {
+        window.tidioChatApi.on('ready', onTidioChatApiReady)
+      }
+      else {
+        document.addEventListener('tidioChat-ready', onTidioChatApiReady);
+      }
+    })();
+  </script>
+</head>
+<body class="mat-typography">
+  <app-root></app-root>
+</body>
+</html>

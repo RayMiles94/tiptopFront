@@ -1,0 +1,33 @@
+<div class="mat-elevation-z8">
+  <button mat-icon-button (click)="goBack()">
+    <mat-icon>keyboard_return</mat-icon>
+  </button>
+
+  <mat-table [dataSource]="tickets" class="mat-elevation-z8">
+    <ng-container matColumnDef="ticketNumber">
+      <mat-header-cell *matHeaderCellDef>Numéro de ticket</mat-header-cell>
+      <mat-cell *matCellDef="let ticket">{{ ticket.ticketNumber }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef>Statut</mat-header-cell>
+      <mat-cell *matCellDef="let ticket">{{ ticket.status }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row
+      *matHeaderRowDef="['ticketNumber',  'status']"
+    ></mat-header-row>
+    <mat-row
+      *matRowDef="let row; columns: ['ticketNumber', 'status']"
+    ></mat-row>
+  </mat-table>
+  <form [formGroup]="form">
+    <div class="center-container">
+      <mat-form-field>
+        <input matInput formControlName="ticketNumber" placeholder="Entrer le numéro de votre ticket">
+        <mat-error> ce numéro doit contenir 10 chiffres</mat-error>
+      </mat-form-field>
+      <button class="participate" mat-stroked-button [disabled]="form.invalid || form.pristine" (click)="addTicket()">Participer</button>
+    </div>
+  </form>
+</div>

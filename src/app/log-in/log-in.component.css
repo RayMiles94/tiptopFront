@@ -1,0 +1,49 @@
+.login-card , form{
+  max-width: 800px;
+  height: 90vh;
+  margin:58px auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.custom-link {
+  color:rgba(53, 11, 11, 0.76);; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make the link text bold */
+  padding-left: 40px;
+}
+.login {
+  background-color:#37413c44; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove button border */
+  padding: 5px 10px; /* Padding inside the button */
+  cursor: pointer;
+  outline: none; /* Remove button outline */
+  margin-top: 10px; /* Add space between the message and button */
+}
+ .Facebookbtn{
+  border-width: thin;
+  align-items: center;
+  justify-content: center;
+   background-color:  #1877F2;
+   color: #f7f7f7;
+   height: 35px;
+   padding-right: 15px ;
+     margin-bottom: 10px;
+     font-weight: bold;
+}
+
+.facebook{
+  vertical-align: middle; /* If using an image for the icon */
+    width: 20px;
+    height: 20px;
+    background-color: unset;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+

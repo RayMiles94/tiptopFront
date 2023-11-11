@@ -1,0 +1,29 @@
+.contactcard , form{
+    max-width: 800px;
+    height: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.full-width {
+    width: 100%;
+}
+
+input{
+    width: 200px;
+    height: 20px;
+}
+.submitbutton{
+    background-color:#37413c44; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 5px 10px; /* Padding inside the button */
+    cursor: pointer;
+    outline: none; /* Remove button outline */
+    margin-top: 10px; /* Add space between the message and button */
+}
+.submitbutton:hover {
+    background-color:rgba(53, 11, 11, 0.76); /* Button background color on hover */
+}

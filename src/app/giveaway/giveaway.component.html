@@ -1,0 +1,33 @@
+<mat-card class="homeDash">
+<mat-accordion >
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Ajouter un numéro de ticket gagnant
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+    <button mat-stroked-button class="sendMail" (click)="addWinnerTicket()">Ajouter</button>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+  <mat-expansion-panel-header>
+      <mat-panel-title>
+        Consulter les statistiques du jeux-concours
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <button mat-stroked-button class="sendMail" (click)="viewAdminDash()">Consulter</button>
+  </mat-expansion-panel>
+    <mat-expansion-panel>
+  <mat-expansion-panel-header>
+      <mat-panel-title>
+        Consulter le grand gagnant
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <button mat-stroked-button class="sendMail" (click)="viewWinner()">Consulter</button>
+  </mat-expansion-panel>
+</mat-accordion>
+
+  <div  class="chart-container">
+    <canvas id="piechart"></canvas>
+  </div>
+</mat-card>

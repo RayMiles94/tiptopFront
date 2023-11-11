@@ -1,0 +1,27 @@
+.signin-card , form{
+    max-width: 800px;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+
+  .full-width {
+    width: 100%;
+  }
+
+  input{
+    width: 200px;
+    height: 20px;
+  }
+  button{
+      background-color:#37413c44; /* Button background color */
+      color: #fff; /* Button text color */
+      border: none; /* Remove button border */
+      padding: 5px 10px; /* Padding inside the button */
+      cursor: pointer;
+      outline: none; /* Remove button outline */
+      margin-top: 10px; /* Add space between the message and button */
+  }

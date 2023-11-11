@@ -1,0 +1,25 @@
+<div class="mat-elevation-z8" style="height: 100vh;">
+  <mat-card class="contactcard" fxLayout="column" fxLayoutGap="50px">
+    <mat-card-title>Contact Us</mat-card-title><br>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput name="name" [(ngModel)]="name" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput name="email" [(ngModel)]="email" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Message</mat-label>
+          <textarea matInput name="message" [(ngModel)]="message" required></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button class="submitbutton" type="submit" [disabled]="contactForm.invalid">envoyer</button>
+      </form>
+    </mat-card-content>
+  </mat-card></div>
+

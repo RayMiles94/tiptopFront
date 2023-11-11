@@ -1,0 +1,25 @@
+<mat-card class="login-card" >
+    <mat-card-header style="margin-top: 200px;">
+      <mat-card-title><h1>SE CONNECTER</h1></mat-card-title>
+      <mat-card-subtitle><a href="/signUp"  class="custom-link">s'inscire pour continuer</a></mat-card-subtitle>
+  </mat-card-header>
+    <mat-card-content fxLayout="column" fxLayoutAlign="space-between center" >
+      <form [formGroup]="userForm">
+        <mat-form-field >
+          <input matInput placeholder="Username" name="email" required  formControlName="username">
+        </mat-form-field><br>
+        <mat-form-field >
+          <input matInput type="password" placeholder="MOT DE PASSE" name="password" required  formControlName="password">
+        </mat-form-field><br>
+        <div fxLayout="column" >
+        <button mat-raised-button class="login" type="submit" (click)="onLoggedin()">se connecter</button><br>
+          <mat-error *ngIf="err==1"> login ou mot de passe erronés..</mat-error>
+        <div >
+        <button mat-icon-button  class="Facebookbtn" (click)="signInWithFB()"> <img class="facebook" src="assets/facebook.png">Sign in with FACEBOOK</button>
+          <asl-google-signin-button type='standard' size='medium'></asl-google-signin-button>
+
+    </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>

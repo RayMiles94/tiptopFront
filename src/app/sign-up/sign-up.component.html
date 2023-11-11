@@ -1,0 +1,25 @@
+<mat-card class="signin-card" >
+    <mat-card-header style="margin-top: 100px">
+      <mat-card-title><h1>Céer un nouveau compte</h1></mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="column" fxLayoutAlign="space-between center" >
+      <form [formGroup]="userForm">
+        <mat-form-field>
+          <mat-label>Nom d'utilisateur</mat-label>
+          <input matInput placeholder="Nom d'utilisateur" formControlName="username">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput type="email" placeholder="Adresse e-mail" formControlName="email">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Mot de passe" formControlName="password">
+        </mat-form-field><br>
+        <mat-form-field>
+            <input matInput type="password" placeholder="Confirmer votre Mot de passe">
+          </mat-form-field><br>
+        <!-- Ajoutez d'autres champs ici -->
+        <button mat-raised-button color="primary" (click)="addUser()">Créer un compte</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

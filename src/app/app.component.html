@@ -1,0 +1,31 @@
+<div>
+  <ng-container>
+    <mat-toolbar>
+    <div class="left" >
+      <!-- Add your logo here -->
+      <img src="../assets/logo.png" alt="Logo">
+    </div>
+    <div class="right" *ngIf="!personService.isloggedIn" >
+      <a routerLink="/home" routerLinkActive="active-link">
+        <button mat-button>ACCUEIL</button>
+      </a>
+      <a routerLink="/logIn" routerLinkActive="active-link">
+        <button mat-button (click)="onConnexion()">CONNEXION</button>
+      </a>
+      <a routerLink="/signUp" routerLinkActive="active-link">
+        <button mat-button>INSCRIPTION</button>
+      </a>
+      <a routerLink="/contact" routerLinkActive="active-link">
+        <button mat-button>CONTACT</button>
+      </a>
+    </div>
+      <div *ngIf="personService.isloggedIn" >
+    <app-user-header *ngIf="!personService.isAdmin()"[userProfile]="userProfile" ></app-user-header>
+    <app-admin-header *ngIf="personService.isAdmin()" [userProfile]="userProfile"></app-admin-header>
+      </div>
+    </mat-toolbar>
+  </ng-container>
+  <router-outlet>
+  </router-outlet>
+  <app-footer></app-footer>
+</div>

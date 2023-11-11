@@ -1,0 +1,49 @@
+.description {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 90px;
+    width: 500px;
+    color: unset;
+    background-color: unset;
+}
+
+.signIn-button {
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background:#37413c44;
+    color:wheat;
+    border-color: #37413c44;
+    font-size: 10px;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0px;
+}
+
+.button-container {
+    font-weight: bolder;
+
+  }
+  .card-description{
+    color:wheat;
+    font-weight: bolder;
+    margin-top: 100px;
+    width: 100vh;
+      background-color: unset;
+  }
+
+.background {
+    background-image: url('../../assets/tea.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+    opacity: 88%;
+}
