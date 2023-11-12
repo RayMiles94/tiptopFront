@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {PersonService} from '../services/person.service';
 
 @Component({
@@ -11,14 +12,14 @@ export class AdminHeaderComponent implements OnInit {
   @Input() userProfile: any; // Assuming userProfile is provided as input
   logedInuser!: any;
 
-  constructor(private personService: PersonService) { }
+  constructor(private personService: PersonService, private router: Router) { }
 
   ngOnInit(): void {
 
   }
   handleSignOut() {
     this.personService.logout();
-    window.location.href='https://localhost:4200/home';
+    this.router.navigate(['/home']);
   }
 
   async getLoginStatus() {

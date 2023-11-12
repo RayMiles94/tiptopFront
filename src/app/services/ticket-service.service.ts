@@ -9,7 +9,7 @@ import {PersonService} from './person.service';
 })
 export class TicketServiceService {
 
-  private baseUrl = 'http://localhost:8090/users'; // Replace with your API URL
+  private baseUrl = 'http://localhost:8080/users'; // Replace with your API URL
   private userId!: number;
 
   constructor(private http: HttpClient,

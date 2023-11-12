@@ -10,7 +10,7 @@ import { Person } from '../admin-dashboard/person';
   providedIn: 'root'
 })
 export class PersonService {
-  private baseUrl = 'http://localhost:8090/users';
+  private baseUrl = 'http://localhost:8080/users';
 
   token!:string;
   public loggedUser!:string;
@@ -107,7 +107,7 @@ export class PersonService {
       password: ''}
     this.addUser(user).subscribe(user=>{
       console.log(user);
-      window.location.href = 'https://localhost:4200/myAccount';
+      this.router.navigate(['/myAccount']);
     }) ;
     return ;
   }
