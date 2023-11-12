@@ -8,9 +8,7 @@ pipeline {
             steps {
 
                 sh '''
-                
                 docker build -t thetiptop2023667/tiptopfront:${IMAGETAG}  . 
-
                 '''
 
                   echo 'image builded'
@@ -24,6 +22,7 @@ pipeline {
                         env.REG_USERNAME = USERNAME
                         env.REG_PASSWORD = PASSWORD
                     }
+                    
 
                sh ''' 
                docker login --username=${REG_USERNAME} --password=${REG_PASSWORD}
