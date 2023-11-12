@@ -4,18 +4,6 @@ pipeline {
             nodejs 'npm'
        }
     stages {
-      
-      
-        stage("Build"){
-            steps {
-
-                sh '''
-                npm run build
-                '''
-
-                  echo 'image builded'
-            }
-        }
         stage("Build image"){
             steps {
 
