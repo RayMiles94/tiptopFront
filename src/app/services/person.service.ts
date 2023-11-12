@@ -111,18 +111,4 @@ export class PersonService {
     }) ;
     return ;
   }
-  loginWithFacebook(token: any): any{
-    console.log('test',token);
-    this.saveToken(token);
-
-    let user  = {
-      email: this.loggedUser,
-      username: this.username,
-      password: ''}
-    //test if account exists
-    this.addUser(user).subscribe(user=>{
-      console.log(user);
-      window.location.href = 'https://localhost:4200/myAccount';
-    }) ;
-  }
 }
