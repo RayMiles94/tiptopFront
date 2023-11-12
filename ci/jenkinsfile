@@ -32,7 +32,24 @@ pipeline {
             }
             }
         }
+        stage("deploy image"){
+            steps {
+                 script{
+                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'vmprod',
+                    usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+                        env.VM_USERNAME = USERNAME
+                        env.VM_PASSWORD = PASSWORD
+                    }
 
+               sh ''' 
+               ssh ${VM_USERNAME}:${VM_PASSWORD}@13.36.39.26 
+               docker compose down
+               docker compose up -d
+                '''
+
+            }
+            }
+        }
        
 
     }

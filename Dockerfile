@@ -1,5 +1,5 @@
 # Stage 1
-FROM node:16.19.0-slim as build-step
+FROM node:14.20.0 AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install --force
