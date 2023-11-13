@@ -24,11 +24,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TicketServiceService } from './services/ticket-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import {SocialLoginModule, SocialAuthServiceConfig} from '@abacritt/angularx-social-login';
-import {
-  GoogleLoginProvider,
-  FacebookLoginProvider
-} from '@abacritt/angularx-social-login';
 import { GiveAwayAddComponent } from './giveaway/give-away-add/give-away-add.component';
 import { GiveAwayEditComponent } from './giveaway/give-away-edit/give-away-edit.component';
 import { UserHeaderComponent } from './user-header/user-header.component';
@@ -69,31 +64,11 @@ import { UserHistoryComponent } from './user-history/user-history.component';
     MatSnackBarModule,
     ReactiveFormsModule,
     MatInputModule,
-    SocialLoginModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatExpansionModule
   ],
-  providers: [TicketServiceService,SocialSignInService,
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '939954036993-7t1uesrkei878qoor4o4kqtg0u0q4j0s.apps.googleusercontent.com'
-            )
-          },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('670909031477948')
-          }
-        ]
-      } as SocialAuthServiceConfig,
-    }
-],
+  providers: [TicketServiceService,SocialSignInService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

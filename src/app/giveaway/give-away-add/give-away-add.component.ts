@@ -35,6 +35,7 @@ export class GiveAwayAddComponent implements OnInit {
     this.ticketService.addTicket(Number(this.form.value.ticketNumber)).subscribe(message => {
       console.log(message) ;
     }, error => {
+      console.log(error);
       if(error.error.text){
         this.message = (error.error.text);
         this.snackBar.open(this.message, 'close', {
@@ -43,9 +44,10 @@ export class GiveAwayAddComponent implements OnInit {
           horizontalPosition: 'center', // Adjust the horizontal position
           panelClass: ['error-snackbar'], // CSS class for success message styling
         });
+        window.location.reload();
+
       }
       else {
-
         this.message = (error.error);
         this.snackBar.open(this.message, 'close', {
           duration: 5000, // 3 seconds
@@ -55,7 +57,6 @@ export class GiveAwayAddComponent implements OnInit {
         });
       }
     });
-    window.location.reload();
   }
 
   public getTickets(){

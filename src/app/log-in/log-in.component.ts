@@ -1,10 +1,4 @@
 import {
-  FacebookLoginProvider,
-  GoogleLoginProvider,
-  SocialAuthService,
-  SocialUser,
-} from '@abacritt/angularx-social-login';
-import {
   ChangeDetectorRef,
   Component,
   ElementRef,
@@ -34,7 +28,6 @@ export class LogInComponent implements OnInit {
   err: number=0;
 
   constructor(private _renderer2: Renderer2
-              ,private authService: SocialAuthService
               , private ref: ChangeDetectorRef
               , private router: Router,
               private facebookService:SocialSignInService
@@ -47,29 +40,7 @@ export class LogInComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.authState.subscribe((user) => {
-      this.pesonService.loginWithGoogle(user.idToken);
-    });
 
-//For button login
-    (globalThis as any).handleCredentialResponse = (response: any) => {
-      // Handle the response here
-      console.log('Received credential response:', response);
-      this.pesonService.loginWithGoogle(response.credential);
-     // window.location.href = 'https://localhost:4200/myAccount';
-    };
-    this.authService.authState.subscribe(
-      data => {
-        this.loggedIn = (data != null);
-      }
-    );
-  }
-
-  signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(
-      data => {
-        console.log(data);      }
-    );
   }
   onLoggedin()
   {

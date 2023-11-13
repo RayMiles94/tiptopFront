@@ -1,4 +1,3 @@
-import {SocialAuthService} from '@abacritt/angularx-social-login';
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { Router} from '@angular/router';
 import {PersonService} from './services/person.service';
@@ -18,7 +17,6 @@ export class AppComponent implements OnInit{
   loggedInuserFB:any;
   private loginStatus: any;
   public constructor(private router: Router,
-                     private authService: SocialAuthService,
                      private facebookService:SocialSignInService,
                      private cdr: ChangeDetectorRef,
                      public personService: PersonService) {

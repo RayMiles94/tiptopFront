@@ -1,4 +1,3 @@
-import {SocialAuthService} from '@abacritt/angularx-social-login';
 import {ChangeDetectorRef, Component, Input, OnInit, SimpleChanges} from '@angular/core';
 import {Router} from '@angular/router';
 import {Person} from '../admin-dashboard/person';
@@ -16,7 +15,6 @@ export class UserHeaderComponent implements OnInit {
   logedInuser: boolean=false;
 
   public constructor(private router: Router,
-                     private authService: SocialAuthService,
                      private facebookService:SocialSignInService,
                      private cdr: ChangeDetectorRef,
                      public personService:PersonService) {
@@ -33,7 +31,6 @@ export class UserHeaderComponent implements OnInit {
 
   }
   signOut(): void {
-    this.authService.signOut();
   }
   ngOnChanges(changes: SimpleChanges) {
     if (changes['userProfile']) {
