@@ -1,14 +1,14 @@
 pipeline {
     agent any
-   
+       tools {
+            nodejs 'npm'
+       }
     stages {
-      
-      
         stage("Build image"){
             steps {
 
                 sh '''
-                docker build -t thetiptop2023667/tiptopfront:${IMAGETAG}  . 
+                docker build -t thetiptop2023667/tiptopfront:${IMAGETAG}  .
                 '''
 
                   echo 'image builded'
