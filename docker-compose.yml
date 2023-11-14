@@ -3,7 +3,7 @@ services:
   frontend-server:
     image: thetiptop2023667/tiptopfront:latest
     ports:
-      - "4200:4200"      
+      - "4300:4300"      
     networks:
       - springmysql-net
     depends_on:
