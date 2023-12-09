@@ -42,7 +42,7 @@ export class TicketServiceService {
       catchError(error => {
         return throwError(error);
       })
-    );;
+    );
   }
 
   public updateTicket(ticket: number, userId: number): Observable<any> {

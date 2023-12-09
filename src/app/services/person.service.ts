@@ -25,7 +25,7 @@ export class PersonService {
 
 
   login(user: Person) {
-    return this.http.post<Person>(this.baseUrl + '/login1', user, { observe: 'response' });
+    return this.http.post<Person>(this.baseUrl + '/login', user, { observe: 'response' });
   }
 
   saveToken(jwt: string) {

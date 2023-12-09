@@ -36,6 +36,10 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { UserHistoryComponent } from './user-history/user-history.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { UsermanagerCompnent } from './user-manager/user-manager.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +56,9 @@ import { UserHistoryComponent } from './user-history/user-history.component';
     UserHeaderComponent,
     AdminHeaderComponent,
     ContactComponent,
-    UserHistoryComponent
+    UserHistoryComponent,
+    UsermanagerCompnent,
+
   ],
   imports: [
     BrowserModule,
@@ -72,7 +78,8 @@ import { UserHistoryComponent } from './user-history/user-history.component';
     SocialLoginModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatPaginatorModule,
   ],
   providers: [TicketServiceService,SocialSignInService,
     {

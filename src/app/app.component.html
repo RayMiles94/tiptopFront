@@ -18,6 +18,7 @@
       <a routerLink="/contact" routerLinkActive="active-link">
         <button mat-button>CONTACT</button>
       </a>
+
     </div>
       <div *ngIf="personService.isloggedIn" >
     <app-user-header *ngIf="!personService.isAdmin()"[userProfile]="userProfile" ></app-user-header>

@@ -1,25 +1,32 @@
-<mat-card class="signin-card" >
-    <mat-card-header style="margin-top: 100px">
-      <mat-card-title><h1>Céer un nouveau compte</h1></mat-card-title>
-    </mat-card-header>
-    <mat-card-content fxLayout="column" fxLayoutAlign="space-between center" >
-      <form [formGroup]="userForm">
-        <mat-form-field>
-          <mat-label>Nom d'utilisateur</mat-label>
-          <input matInput placeholder="Nom d'utilisateur" formControlName="username">
-        </mat-form-field><br>
-        <mat-form-field>
-          <input matInput type="email" placeholder="Adresse e-mail" formControlName="email">
-        </mat-form-field><br>
-        <mat-form-field>
-          <input matInput type="password" placeholder="Mot de passe" formControlName="password">
-        </mat-form-field><br>
-        <mat-form-field>
-            <input matInput type="password" placeholder="Confirmer votre Mot de passe">
-          </mat-form-field><br>
-        <!-- Ajoutez d'autres champs ici -->
-        <button mat-raised-button color="primary" (click)="addUser()">Créer un compte</button>
-      </form>
-    </mat-card-content>
-  </mat-card>
-  
+<mat-card class="signin-card">
+  <mat-card-header style="margin-top: 100px">
+    <mat-card-title>
+      <h1>Céer un nouveau compte</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content fxLayout="column" fxLayoutAlign="space-between center">
+    <form [formGroup]="userForm">
+      <mat-form-field>
+        <mat-label>Nom d'utilisateur</mat-label>
+        <input matInput placeholder="Nom d'utilisateur" formControlName="username" [disabled]="disable">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="email" placeholder="Adresse e-mail" formControlName="email" [disabled]="disable">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Mot de passe" formControlName="password" [disabled]="disable">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="password" formControlName="conpassword" placeholder="Confirmer votre Mot de passe" [disabled]="disable">
+      </mat-form-field><br>
+      <!-- Ajoutez d'autres champs ici -->
+      <button mat-raised-button color="primary" [disabled]="disable" (click)="addUser()">Créer un compte</button>
+
+      <br/>
+      <div *ngIf="disable" matBadge="4" matBadgeOverlap="false" style="color : green;" class="demo-section">Creation of account is done</div>
+      <br/>
+      <div *ngIf="error" matBadge="4" matBadgeOverlap="false" style="color : red;" class="demo-section">Error</div>
+    </form>
+
+  </mat-card-content>
+</mat-card>

@@ -10,6 +10,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { TicketComponent } from './ticket/ticket.component';
 import {UserHistoryComponent} from './user-history/user-history.component';
+import { UsermanagerCompnent } from './user-manager/user-manager.component';
 
 const routes: Routes = [
   {
@@ -22,10 +23,10 @@ const routes: Routes = [
   },
 
   { path: 'logIn',
-   component: LogInComponent 
+   component: LogInComponent
   },
   { path: 'signUp',
-  component: SignUpComponent 
+  component: SignUpComponent
  },
  {
   path: 'myAccount',
@@ -55,6 +56,10 @@ const routes: Routes = [
     path: 'historique',
     component: UserHistoryComponent
   },
+  {
+    path: 'usermanager',
+    component : UsermanagerCompnent
+  }
 
 ];
 
