@@ -22,7 +22,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TicketServiceService } from './services/ticket-service.service';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import {SocialLoginModule, SocialAuthServiceConfig} from '@abacritt/angularx-social-login';
 import {
@@ -39,6 +39,7 @@ import { UserHistoryComponent } from './user-history/user-history.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { UsermanagerCompnent } from './user-manager/user-manager.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {JwtInterceptor} from "./common/auth.interceptor";
 
 
 @NgModule({
@@ -99,8 +100,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
           }
         ]
       } as SocialAuthServiceConfig,
-    }
+    },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
 ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
