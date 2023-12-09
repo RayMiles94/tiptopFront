@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TicketServiceService } from './ticket-service.service';
+import { LegacyTicketService } from './ticket-service';
 
 describe('TicketServiceService', () => {
-  let service: TicketServiceService;
+  let service: LegacyTicketService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TicketServiceService);
+    service = TestBed.inject(LegacyTicketService);
   });
 
   it('should be created', () => {

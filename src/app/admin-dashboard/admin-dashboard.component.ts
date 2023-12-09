@@ -4,7 +4,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {NavigationEnd, Router} from '@angular/router';
 import {Chart, registerables, Tick} from 'chart.js';
 import {PersonService} from '../services/person.service';
-import {TicketServiceService} from '../services/ticket-service.service';
+import {LegacyTicketService} from '../services/ticket-service';
 import {Person} from './person';
 import { filter } from 'rxjs/operators';
 import emailjs from '@emailjs/browser';
@@ -27,7 +27,7 @@ export class AdminDashboardComponent implements OnInit {
   constructor(private personService: PersonService,
               router: Router,
               private snackBar: MatSnackBar,
-              private ticketService: TicketServiceService,
+              private ticketService: LegacyTicketService,
               private cdr: ChangeDetectorRef) {
     // const navEndEvent$ = router.events.pipe(
     //   filter(e => e instanceof NavigationEnd)

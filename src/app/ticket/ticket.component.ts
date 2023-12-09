@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {PersonService} from '../services/person.service';
 import {SocialSignInService} from '../services/socialSignIn.service';
-import { TicketServiceService } from '../services/ticket-service.service';
+import { LegacyTicketService } from '../services/ticket-service';
 import { Ticket } from './ticket';
 
 @Component({
@@ -19,7 +19,7 @@ export class TicketComponent implements OnInit {
   userProfile: any;
 
 
-  constructor(private ticketService: TicketServiceService,
+  constructor(private ticketService: LegacyTicketService,
               private snackBar: MatSnackBar,
               private formBuilder: FormBuilder,
               private fb: SocialSignInService,

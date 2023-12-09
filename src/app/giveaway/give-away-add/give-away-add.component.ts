@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {TicketServiceService} from '../../services/ticket-service.service';
+import {LegacyTicketService} from '../../services/ticket-service';
 import {Ticket} from '../../ticket/ticket';
 import {Giveaway} from '../giveaway';
 
@@ -14,7 +14,7 @@ export class GiveAwayAddComponent implements OnInit {
   public message: string = '';
   public tickets: Ticket[] = [];
 
-  constructor(private ticketService: TicketServiceService,
+  constructor(private ticketService: LegacyTicketService,
               private formBuilder: FormBuilder,
               private snackBar: MatSnackBar,
   ) { }
@@ -59,9 +59,9 @@ export class GiveAwayAddComponent implements OnInit {
   }
 
   public getTickets(){
-    this.ticketService.getTickets().subscribe((data: Ticket[])=>{
-      return this.tickets = data;
-    })
+    // this.ticketService.getTickets().subscribe((data: Ticket[])=>{
+    //   return this.tickets = data;
+    // })
   }
 
   goBack(): void {

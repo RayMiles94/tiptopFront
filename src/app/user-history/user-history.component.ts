@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TicketServiceService} from '../services/ticket-service.service';
+import {LegacyTicketService} from '../services/ticket-service';
 import {Ticket} from '../ticket/ticket';
 
 @Component({
@@ -10,7 +10,7 @@ import {Ticket} from '../ticket/ticket';
 export class UserHistoryComponent implements OnInit {
   displayedColumns: string[] = ['ticketNumber', 'status',  'prize', 'image'];
   dataSource: Ticket[]=[];
-  constructor(private ticketService:TicketServiceService) { }
+  constructor(private ticketService:LegacyTicketService) { }
 
   ngOnInit(): void {
     this.getTickets();

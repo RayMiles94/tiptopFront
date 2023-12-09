@@ -2,7 +2,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Chart} from 'chart.js';
 import {Person} from '../admin-dashboard/person';
-import {TicketServiceService} from '../services/ticket-service.service';
+import {LegacyTicketService} from '../services/ticket-service';
 import { Giveaway } from './giveaway';
 
 @Component({
@@ -19,7 +19,7 @@ export class GivewayComponent implements OnInit , AfterViewInit{
 
 
   constructor(private router:Router,
-              private ticketService: TicketServiceService,
+              private ticketService: LegacyTicketService,
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class GivewayComponent implements OnInit , AfterViewInit{
   }
 
   openGiveaway(giveaway:any) {
-    
+
   }
 
   addWinnerTicket() {
@@ -59,12 +59,12 @@ export class GivewayComponent implements OnInit , AfterViewInit{
   }
 
   public getTicketList(){
-    this.ticketService.getTickets().subscribe(ticket => {
-      const reclamedPersonsCount = ticket.filter(person => person.status === 'reclame').length;
-      this.dataChart.push(reclamedPersonsCount);
-      const notReclamedPersonsCount = ticket.filter(person => person.status === 'nonreclame').length;
-      this.dataChart.push(notReclamedPersonsCount);
-    })
+    // this.ticketService.getTickets().subscribe(ticket => {
+    //   const reclamedPersonsCount = ticket.filter(person => person.status === 'reclame').length;
+    //   this.dataChart.push(reclamedPersonsCount);
+    //   const notReclamedPersonsCount = ticket.filter(person => person.status === 'nonreclame').length;
+    //   this.dataChart.push(notReclamedPersonsCount);
+    // })
   }
 
   RenderChart(){

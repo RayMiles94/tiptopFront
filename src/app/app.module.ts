@@ -21,7 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TicketServiceService } from './services/ticket-service.service';
+import { LegacyTicketService } from './services/ticket-service';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import {SocialLoginModule, SocialAuthServiceConfig} from '@abacritt/angularx-social-login';
@@ -41,6 +41,8 @@ import { UsermanagerCompnent } from './user-manager/user-manager.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {JwtInterceptor} from "./common/auth.interceptor";
 import {MatButtonModule} from "@angular/material/button";
+import { TicketManagementComponent } from './ticket-management/ticket-management.component';
+import { MyTicketsComponent } from './my-tickets/my-tickets.component';
 
 
 @NgModule({
@@ -60,6 +62,8 @@ import {MatButtonModule} from "@angular/material/button";
     ContactComponent,
     UserHistoryComponent,
     UsermanagerCompnent,
+    TicketManagementComponent,
+    MyTicketsComponent,
 
   ],
   imports: [
@@ -84,7 +88,7 @@ import {MatButtonModule} from "@angular/material/button";
     MatExpansionModule,
     MatPaginatorModule,
   ],
-  providers: [TicketServiceService,SocialSignInService,
+  providers: [LegacyTicketService,SocialSignInService,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

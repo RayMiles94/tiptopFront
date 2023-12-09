@@ -11,6 +11,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { TicketComponent } from './ticket/ticket.component';
 import {UserHistoryComponent} from './user-history/user-history.component';
 import { UsermanagerCompnent } from './user-manager/user-manager.component';
+import {TicketManagementComponent} from "./ticket-management/ticket-management.component";
 
 const routes: Routes = [
   {
@@ -61,8 +62,12 @@ const routes: Routes = [
     component : UsermanagerCompnent
   },
   {
+    path: 'ticketmanagement/:id',
+    component : TicketManagementComponent
+  },
+  {
     path: 'ticketmanagement',
-    component : UsermanagerCompnent
+    component : TicketManagementComponent
   },
 
 ];

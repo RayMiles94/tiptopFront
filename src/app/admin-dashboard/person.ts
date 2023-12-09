@@ -1,4 +1,4 @@
-import {Ticket} from '../ticket/ticket';
+import {Ticket} from "../user-manager/User";
 
 export interface Person {
   id: number;

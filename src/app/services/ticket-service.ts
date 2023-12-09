@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, Subscription, switchMap, tap, throwError } from 'rxjs';
-import { Message, Ticket } from '../ticket/ticket';
-import { PersonService } from './person.service';
+import { Message } from '../ticket/ticket';
+import {Ticket} from "../user-manager/User";
+import {PersonService} from "./person.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class TicketServiceService {
+export class LegacyTicketService {
 
   private baseUrl = 'http://localhost:8080/users'; // Replace with your API URL
   private userId!: number;

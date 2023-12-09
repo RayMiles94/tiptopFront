@@ -3,7 +3,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import emailjs from '@emailjs/browser';
 import {Person} from '../../admin-dashboard/person';
 import {PersonService} from '../../services/person.service';
-import {TicketServiceService} from '../../services/ticket-service.service';
+import {LegacyTicketService} from '../../services/ticket-service';
 
 @Component({
   selector: 'app-give-away-edit',
@@ -17,7 +17,7 @@ export class GiveAwayEditComponent implements OnInit {
 
   constructor(private userService: PersonService,
               private snackBar: MatSnackBar,
-              private ticketService: TicketServiceService) { }
+              private ticketService: LegacyTicketService) { }
 
   ngOnInit(): void {
     this.dataSource;

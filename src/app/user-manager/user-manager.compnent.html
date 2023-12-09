@@ -30,9 +30,11 @@
       <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
       <mat-cell *matCellDef="let element">
         <button mat-raised-button color="warn" (click)="deleteUser(element.id)">Supprimer</button>
-        <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
+        <a routerLink="/ticketmanagement/{{element.id}}" routerLinkActive="active-link">
+          <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </a>
       </mat-cell>
     </ng-container>
 
