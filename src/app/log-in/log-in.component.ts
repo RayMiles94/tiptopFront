@@ -73,10 +73,10 @@ export class LogInComponent implements OnInit {
   }
   onLoggedin()
   {
-    this.pesonService.login(this.userForm.value).subscribe((data)=> {
+    this.pesonService.login(this.userForm.value).subscribe((data : any)=> {
       let jwToken = data.headers.get('Authorization');
-      if (jwToken){
-        this.pesonService.saveToken(jwToken);
+      if (data.body.token){
+        this.pesonService.saveToken(data.body.token);
         if (this.pesonService.isAdmin()){
           this.router.navigate(['/admin']);
 

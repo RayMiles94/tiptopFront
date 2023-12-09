@@ -1,34 +1,34 @@
-import {SocialAuthService} from '@abacritt/angularx-social-login';
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import { Router} from '@angular/router';
-import {PersonService} from './services/person.service';
-import {SocialSignInService} from './services/socialSignIn.service';
+import { SocialAuthService } from '@abacritt/angularx-social-login';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PersonService } from './services/person.service';
+import { SocialSignInService } from './services/socialSignIn.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'tiptop';
-  loggedInuser: boolean= false;
+  loggedInuser: boolean = false;
   userProfile: any;
   userType: any;
   role!: string;
-  loggedInuserFB:any;
+  loggedInuserFB: any;
   private loginStatus: any;
   public constructor(private router: Router,
-                     private authService: SocialAuthService,
-                     private facebookService:SocialSignInService,
-                     private cdr: ChangeDetectorRef,
-                     public personService: PersonService) {
+    private authService: SocialAuthService,
+    private facebookService: SocialSignInService,
+    private cdr: ChangeDetectorRef,
+    public personService: PersonService) {
   }
 
-   ngOnInit() {
-     this.personService.loadToken();
-     if (this.personService.getToken()==null ||
-       this.personService.isTokenExpired())
-       this.router.navigate(['/logIn']);
+  ngOnInit() {
+    this.personService.loadToken();
+    if (this.personService.getToken() == null ||
+      this.personService.isTokenExpired())
+      this.router.navigate(['/logIn']);
 
     // this.authService.authState.subscribe(user => {
     //   console.log(user)
@@ -38,12 +38,12 @@ export class AppComponent implements OnInit{
     //   }
     // });
     //
-     // if(this.loggedInuser == this.getLoginStatus()){
-     //   this.userProfile= {firstName:"Eya"};
-     //
-     // }
+    // if(this.loggedInuser == this.getLoginStatus()){
+    //   this.userProfile= {firstName:"Eya"};
+    //
+    // }
 
-     this.cdr.detectChanges();
+    this.cdr.detectChanges();
   }
 
   // handleSignOut() {
@@ -63,7 +63,7 @@ export class AppComponent implements OnInit{
   // }
   //
   onConnexion() {
-    window.location.href="https://localhost:4200/logIn";
+    window.location.href = "https://localhost:4200/logIn";
   }
   // onLogout(){
   //   this.personService.logout();

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Observable, ReplaySubject} from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { Person } from '../admin-dashboard/person';
 
 declare var FB: any;
