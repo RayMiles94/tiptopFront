@@ -5,6 +5,10 @@ import {PersonService} from '../services/person.service';
 import {SocialSignInService} from '../services/socialSignIn.service';
 import { LegacyTicketService } from '../services/ticket-service';
 import { Ticket } from './ticket';
+import {TicketManagementService} from "../ticket-management/ticket-management-service";
+import {MatTableDataSource} from "@angular/material/table";
+import {User} from "../user-manager/User";
+import {Prize} from "../admin-dashboard/person";
 
 @Component({
   selector: 'app-ticket',
@@ -18,12 +22,14 @@ export class TicketComponent implements OnInit {
   public message: string = '';
   userProfile: any;
 
-
+  public prize : Prize;
+  private ticketCount : number;
   constructor(private ticketService: LegacyTicketService,
               private snackBar: MatSnackBar,
               private formBuilder: FormBuilder,
               private fb: SocialSignInService,
-              private personService: PersonService) { }
+              private personService: PersonService,
+              private ticketManagementService : TicketManagementService) { }
   public form = this.formBuilder.group({
     ticketNumber: new FormControl('',[Validators.minLength(10), Validators.maxLength(10) , Validators.pattern("^[0-9]*$"),
     ], ),
@@ -35,6 +41,13 @@ export class TicketComponent implements OnInit {
       this.userId= userId;
     })
   }
+
+//   this.ticketManagementService.getTicketsCount().subscribe((data: any) => {
+//   console.log("prize ", data)
+//   this.prize = data;
+// });
+//
+
   public getTickets(){
     this.ticketService.getTicketByUserId().subscribe((data: Ticket[])=>{
       return this.tickets = data;
@@ -66,5 +79,12 @@ export class TicketComponent implements OnInit {
     })
 
 
+  }
+
+  utiliserUnTicket() {
+    this.ticketManagementService.utiliserTicket().subscribe((data: any) => {
+      console.log("prize ", data)
+      this.prize = data;
+    });
   }
 }

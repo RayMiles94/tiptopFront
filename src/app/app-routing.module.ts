@@ -12,6 +12,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import {UserHistoryComponent} from './user-history/user-history.component';
 import { UsermanagerCompnent } from './user-manager/user-manager.component';
 import {TicketManagementComponent} from "./ticket-management/ticket-management.component";
+import {MyTicketsComponent} from "./my-tickets/my-tickets.component";
 
 const routes: Routes = [
   {
@@ -67,7 +68,7 @@ const routes: Routes = [
   },
   {
     path: 'ticketmanagement',
-    component : TicketManagementComponent
+    component : MyTicketsComponent
   },
 
 ];

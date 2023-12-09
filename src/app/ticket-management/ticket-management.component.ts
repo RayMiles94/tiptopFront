@@ -22,7 +22,16 @@ export class TicketManagementComponent implements OnInit {
   constructor(private ticketService : TicketManagementService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.ticketService.getMytickets().subscribe((data: any) => {
+
+    this.route.params.subscribe(params => {
+      // Access the parameter by its name
+      this.userId = params['id'];
+
+      // Do something with the parameter
+      console.log('Parameter from URL:', this.userId);
+    });
+
+    this.ticketService.getUserTickets(this.userId).subscribe((data: any) => {
       console.log({data})
       this.dataSource = new MatTableDataSource<Ticket>(data);
       console.log('datasource', this.dataSource);

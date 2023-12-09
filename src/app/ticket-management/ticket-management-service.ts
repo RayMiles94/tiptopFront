@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, map, Observable, Subscription, switchMap, tap, throwError } from 'rxjs';
 import {Message, TicketCreateRequest} from '../ticket/ticket';
 import {Ticket} from "../user-manager/User";
+import {Prize} from "../admin-dashboard/person";
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +29,12 @@ export class TicketManagementService {
     return this.http.post<Ticket[]>(`${this.baseUrl}`,ticketcreateRequest);
   }
 
+
+  public utiliserTicket():  Observable<Prize>{
+    return this.http.post<Prize>(`${this.baseUrl}`,null);
+  }
+
+    public getTicketsCount(): Observable<Prize> {
+    return this.http.get<Prize>(`${this.baseUrl}`);
+  }
 }

@@ -1,4 +1,4 @@
-import {Ticket} from "../user-manager/User";
+import {Ticket, User} from "../user-manager/User";
 
 export interface Person {
   id: number;
@@ -17,4 +17,5 @@ export interface Prize {
   name: string;
   description: string;
   probability: number;
+  user : User
 }

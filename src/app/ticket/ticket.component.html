@@ -2,6 +2,16 @@
   <mat-card class="close">
     Partcicpez au jeux-concours . Entrez le numéro trouvé sur votre ticket de caisse
   </mat-card>
+
+  <div class="demo-section">
+    Jouer avec mes tickets
+    <button mat-raised-button color="primary"
+            matBadge="8" matBadgePosition="before" matBadgeColor="accent"
+    (click)="utiliserUnTicket()"
+    >
+      Utiliser ticket
+    </button>
+  </div>
   <form [formGroup]="form">
   <div fxLayout="column">
     <mat-form-field>

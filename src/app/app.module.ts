@@ -43,6 +43,7 @@ import {JwtInterceptor} from "./common/auth.interceptor";
 import {MatButtonModule} from "@angular/material/button";
 import { TicketManagementComponent } from './ticket-management/ticket-management.component';
 import { MyTicketsComponent } from './my-tickets/my-tickets.component';
+import {MatBadgeModule} from "@angular/material/badge";
 
 
 @NgModule({
@@ -87,6 +88,9 @@ import { MyTicketsComponent } from './my-tickets/my-tickets.component';
     MatNativeDateModule,
     MatExpansionModule,
     MatPaginatorModule,
+    MatBadgeModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [LegacyTicketService,SocialSignInService,
     {
