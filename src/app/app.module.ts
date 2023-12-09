@@ -40,6 +40,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { UsermanagerCompnent } from './user-manager/user-manager.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {JwtInterceptor} from "./common/auth.interceptor";
+import { WinWheelModule } from './winwheel/winwheel.module';
+import { WinwheelTest } from './winwheeltest/winwheeltest.component';
 
 
 @NgModule({
@@ -59,7 +61,7 @@ import {JwtInterceptor} from "./common/auth.interceptor";
     ContactComponent,
     UserHistoryComponent,
     UsermanagerCompnent,
-
+    WinwheelTest,
   ],
   imports: [
     BrowserModule,
@@ -81,6 +83,7 @@ import {JwtInterceptor} from "./common/auth.interceptor";
     MatNativeDateModule,
     MatExpansionModule,
     MatPaginatorModule,
+    WinWheelModule
   ],
   providers: [TicketServiceService,SocialSignInService,
     {

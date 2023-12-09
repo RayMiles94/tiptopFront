@@ -11,6 +11,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { TicketComponent } from './ticket/ticket.component';
 import {UserHistoryComponent} from './user-history/user-history.component';
 import { UsermanagerCompnent } from './user-manager/user-manager.component';
+import { WinwheelTest } from './winwheeltest/winwheeltest.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,10 @@ const routes: Routes = [
   {
     path: 'usermanager',
     component : UsermanagerCompnent
+  },
+  {
+    path : 'winwheeltest',
+    component : WinwheelTest
   }
 
 ];
