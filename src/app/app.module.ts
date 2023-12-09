@@ -40,6 +40,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { UsermanagerCompnent } from './user-manager/user-manager.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {JwtInterceptor} from "./common/auth.interceptor";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import {JwtInterceptor} from "./common/auth.interceptor";
     MatFormFieldModule,
     MatIconModule,
     MatTableModule,
+    MatButtonModule,
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,

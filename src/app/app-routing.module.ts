@@ -59,7 +59,11 @@ const routes: Routes = [
   {
     path: 'usermanager',
     component : UsermanagerCompnent
-  }
+  },
+  {
+    path: 'ticketmanagement',
+    component : UsermanagerCompnent
+  },
 
 ];
 

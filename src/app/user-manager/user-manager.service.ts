@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Users } from "./Users";
+import { User } from "./User";
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -9,16 +9,19 @@ import { Observable } from "rxjs";
 export class UsermanagerService {
 
   private baseUrl = 'http://localhost:8080/api/users'; // Replace with your API URL
-  public users : Users[] = [];
+  public users : User[] = [];
 
   public constructor(private http: HttpClient) { }
 
-  public getAllUsers():  Observable<Users[]> {
-    return this.http.get<Users[]>(`${this.baseUrl}`);
+  public getAllUsers():  Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseUrl}`);
   }
 
-  public SetUsers(users: Users[]) {
+  public SetUsers(users: User[]) {
     this.users = users;
   }
 
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete<User[]>(`${this.baseUrl}/${id}`);
+  }
 }
