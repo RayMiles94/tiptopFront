@@ -14,7 +14,6 @@ import { UsermanagerCompnent } from './user-manager/user-manager.component';
 import {TicketManagementComponent} from "./ticket-management/ticket-management.component";
 import {MyTicketsComponent} from "./my-tickets/my-tickets.component";
 import {WinwheelTest} from "./winwheeltest/winwheeltest.component";
-import {StatisticsComponent} from "./statistics/statistics.component";
 
 const routes: Routes = [
   {
@@ -60,10 +59,10 @@ const routes: Routes = [
     path: 'historique',
     component: UserHistoryComponent
   },
-  {
-    path: 'statistiques',
-    component: StatisticsComponent
-  },
+  // {
+  //   path: 'statistiques',
+  //   component: StatisticsComponent
+  // },
   {
     path: 'usermanager',
     component : UsermanagerCompnent
