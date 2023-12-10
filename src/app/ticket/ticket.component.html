@@ -4,13 +4,10 @@
   </mat-card>
 
   <div class="demo-section">
-    Jouer avec mes tickets
-    <button mat-raised-button color="primary"
-            matBadge="8" matBadgePosition="before" matBadgeColor="accent"
-    (click)="utiliserUnTicket()"
-    >
-      Utiliser ticket
-    </button>
+    <canvas id='winwheelcanvas' width='880' height='300'>
+      Canvas not supported, use another browser.
+    </canvas>
+
   </div>
   <form [formGroup]="form">
   <div fxLayout="column">
@@ -18,7 +15,7 @@
     <input matInput formControlName="ticketNumber" placeholder="Entrer le numéro de votre ticket">
       <mat-error> ce numéro doit contenir 10 chiffres</mat-error>
     </mat-form-field>
-  <button class="participate" mat-stroked-button [disabled]="form.invalid || form.pristine" (click)="validateTicket()">Participer</button>
+  <button class="participate" mat-stroked-button [disabled]="form.invalid || form.pristine" (click)="startAnimation()">Participer</button>
   </div>
   </form>
 </div>

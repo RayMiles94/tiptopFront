@@ -10,7 +10,7 @@ import {PersonService} from "./person.service";
 })
 export class LegacyTicketService {
 
-  private baseUrl = 'http://localhost:8080/users'; // Replace with your API URL
+  private baseUrl = 'http://localhost:8080/api/tickets'; // Replace with your API URL
   private userId!: number;
 
   constructor(private http: HttpClient,
@@ -46,9 +46,9 @@ export class LegacyTicketService {
     );
   }
 
-  public updateTicket(ticket: number, userId: number): Observable<any> {
-    const url = `${this.baseUrl}/asignTicket/${userId}`; // Assuming userId is part of the URL
-    return this.http.put<any>(url, ticket);
+  public checkTicket(ticket: number, userId: number): Observable<any> {
+    const url = `${this.baseUrl}/checkTicket/${ticket}`; // Assuming userId is part of the URL
+    return this.http.post<any>(url, ticket);
   }
 
   public updateTicketStatus(ticketNumber: number) {

@@ -37,4 +37,8 @@ export class TicketManagementService {
     public getTicketsCount(): Observable<Prize> {
     return this.http.get<Prize>(`${this.baseUrl}`);
   }
+
+  spinWheel(ticketNumberValue : number) {
+    return this.http.post<Prize>(`${this.baseUrl}/play/${ticketNumberValue}`,null);
+  }
 }

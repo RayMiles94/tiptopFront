@@ -13,6 +13,7 @@ import {UserHistoryComponent} from './user-history/user-history.component';
 import { UsermanagerCompnent } from './user-manager/user-manager.component';
 import {TicketManagementComponent} from "./ticket-management/ticket-management.component";
 import {MyTicketsComponent} from "./my-tickets/my-tickets.component";
+import {WinwheelTest} from "./winwheeltest/winwheeltest.component";
 
 const routes: Routes = [
   {
@@ -70,7 +71,10 @@ const routes: Routes = [
     path: 'ticketmanagement',
     component : MyTicketsComponent
   },
-
+  {
+    path : 'winwheeltest',
+    component : WinwheelTest
+  }
 ];
 
 @NgModule({

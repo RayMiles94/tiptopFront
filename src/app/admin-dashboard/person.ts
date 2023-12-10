@@ -18,4 +18,5 @@ export interface Prize {
   description: string;
   probability: number;
   user : User
+  angle : number;
 }
