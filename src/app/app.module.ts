@@ -47,9 +47,11 @@ import {MatBadgeModule} from "@angular/material/badge";
 import { WinWheelModule } from './winwheel/winwheel.module';
 import { WinwheelTest } from './winwheeltest/winwheeltest.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     HomeComponent,
@@ -95,9 +97,10 @@ import { StatisticsComponent } from './statistics/statistics.component';
     MatBadgeModule,
     MatButtonModule,
     MatIconModule,
-    WinWheelModule
+    WinWheelModule,
+    MatListModule
   ],
-  providers: [LegacyTicketService,SocialSignInService,
+  providers: [LegacyTicketService, SocialSignInService,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
@@ -116,9 +119,8 @@ import { StatisticsComponent } from './statistics/statistics.component';
         ]
       } as SocialAuthServiceConfig,
     },
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-],
-  bootstrap: [AppComponent],
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+  ],
 
 })
 export class AppModule { }
