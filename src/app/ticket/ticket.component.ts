@@ -133,6 +133,8 @@ export class TicketComponent implements OnInit {
       console.log("start the animation");
       this.ticketManagementService.spinWheel(ticketNumberValue).subscribe((data:any)=> {
         this.prize = data;
+        console.log("start animation data :",data);
+        console.log("start animation data angle:",this.prize.angle);
         this.theWheel.stopAngle = this.prize.angle;
         this.theWheel.animation.spins=8
         this.theWheel.animation.duration=10

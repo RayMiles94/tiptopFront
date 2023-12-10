@@ -46,6 +46,7 @@ import { MyTicketsComponent } from './my-tickets/my-tickets.component';
 import {MatBadgeModule} from "@angular/material/badge";
 import { WinWheelModule } from './winwheel/winwheel.module';
 import { WinwheelTest } from './winwheeltest/winwheeltest.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { WinwheelTest } from './winwheeltest/winwheeltest.component';
     TicketManagementComponent,
     MyTicketsComponent,
     WinwheelTest,
+    StatisticsComponent,
   ],
   imports: [
     BrowserModule,
