@@ -13,3 +13,12 @@ export interface Ticket {
   active: string;
   user : User
 }
+
+
+export interface TicketPrize {
+  id: string;
+  ticketNumber: number;
+  prize: string;
+  prizeNumber : number;
+  isUsed : boolean;
+}

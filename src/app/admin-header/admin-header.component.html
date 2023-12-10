@@ -3,4 +3,19 @@
     <div>Bonjour Admin, </div>
     <button id="signout-button" (click)="handleSignOut()">Se déconnecter</button>
   </div>
+
+  <div class="right">
+    <a routerLink="/myAccount" routerLinkActive="active-link">
+      <button mat-button>JOUER</button>
+    </a>
+    <a routerLink="/historique" routerLinkActive="active-link">
+      <button mat-button >HISTORIQUE</button>
+    </a>
+    <a routerLink="/usermanager" routerLinkActive="active-link">
+      <button mat-button>Gestion des utilisateurs</button>
+    </a>
+    <a routerLink="/ticketmanagement" routerLinkActive="active-link">
+      <button mat-button>Consulter mes tickets</button>
+    </a>
+  </div>
 </mat-toolbar>

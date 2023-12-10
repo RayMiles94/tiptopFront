@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {Ticket, User} from "../user-manager/User";
 import {MatPaginator} from "@angular/material/paginator";
@@ -10,17 +10,22 @@ import {TicketCreateRequest} from "../ticket/ticket";
 @Component({
   selector: 'app-ticket-management',
   templateUrl: './ticket-management.component.html',
-  styleUrls: ['./ticket-management.component.css']
+  styleUrls: ['./ticket-management.component.css'],
 })
-export class TicketManagementComponent implements OnInit {
+export class TicketManagementComponent implements OnInit,AfterViewInit {
+
 
 
   displayedColumns: string[] = ['ticketNumber', 'isUsed','userName','userEmail'];
   dataSource = new MatTableDataSource<Ticket>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   userId : number;
-  constructor(private ticketService : TicketManagementService,private route: ActivatedRoute) { }
+  constructor(private ticketService : TicketManagementService,private route: ActivatedRoute,private cdr: ChangeDetectorRef) { }
 
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.cdr.detectChanges();
+  }
   ngOnInit(): void {
 
     this.route.params.subscribe(params => {
@@ -52,7 +57,12 @@ export class TicketManagementComponent implements OnInit {
       userId: this.userId // Replace with the actual user ID you want to use
     };
     console.log("user id ",this.userId);
-    this.ticketService.addTicketToUser(ticketRequest).subscribe();
+    this.ticketService.addTicketToUser(ticketRequest).subscribe((data: any) => {
+      const ticket : Ticket = data;
+      this.dataSource.data.push(ticket);
+      console.log("dataaaaa",ticket);
+      this.dataSource._updateChangeSubscription();
+    });
 
   }
 }

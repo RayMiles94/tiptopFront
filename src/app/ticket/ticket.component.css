@@ -44,3 +44,9 @@ button {
     font-weight: bolder;
     color:rgba(7, 34, 13, 0.76) ;
 }
+
+
+.demo-section {
+  margin: auto;
+  text-align: center; /* Optionally, for centering content inside the div */
+}

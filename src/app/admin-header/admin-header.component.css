@@ -2,61 +2,68 @@
 
 /* Style the header element */
 mat-toolbar {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    border-bottom: 2px solid rgba(53, 11, 11, 0.76); /* Adjust the color and thickness as needed */
-
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  border-bottom: 2px solid rgba(53, 11, 11, 0.76); /* Adjust the color and thickness as needed */
+  background-color: unset;
 }
 
 /* Style the left container (buttons) */
 .left {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 /* Style the buttons */
 button {
-    color:rgba(53, 11, 11, 0.76);
-    background-color: transparent; /* Transparent background */
-    border: none;
-    cursor: pointer;
-    outline: none;
-    font-weight: bold; /* Make the button text bold when active */
+  color:rgba(53, 11, 11, 0.76);
+  background-color: transparent; /* Transparent background */
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold; /* Make the button text bold when active */
 
 }
 .active-link button {
-    font-weight: bold;
+  font-weight: bold;
 }
 .active-link button {
-    color:rgba(7, 34, 13, 0.76);
-    font-size: large
+  color:rgba(7, 34, 13, 0.76);
+  font-size: large
 }
 /* Style the right container (logo) */
 
 /* Style the logo image */
 .right{
-    max-height: 50px; /* Adjust the maximum height as needed */
-    max-width: 100%; /* Ensure the logo fits within the container */
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-    margin-top: 60px;
+  max-height: 50px; /* Adjust the maximum height as needed */
+  max-width: 100%; /* Ensure the logo fits within the container */
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 60px;
 }
 .upper-right {
-    position: absolute;
-    top: 30px;
-    right: 0;
+  position: absolute;
+  top: 30px;
+  right: 0;
 }
 img {
-    max-height: 200px; /* Adjust the maximum height as needed */
-    max-width: 100%; /* Ensure the logo fits within the container */
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
+  max-height: 200px; /* Adjust the maximum height as needed */
+  max-width: 100%; /* Ensure the logo fits within the container */
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.right{
+  max-height: 50px; /* Adjust the maximum height as needed */
+  max-width: 100%; /* Ensure the logo fits within the container */
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 60px;
 }

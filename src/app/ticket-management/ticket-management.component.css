@@ -21,3 +21,10 @@
   justify-content: center;
   width: 120px;
 }
+
+
+.example-button-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+}

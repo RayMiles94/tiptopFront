@@ -12,6 +12,7 @@ import {SocialSignInService} from '../services/socialSignIn.service';
 })
 export class UserHeaderComponent implements OnInit {
 
+  public role : string;
   @Input() userProfile!: any; // Assuming userProfile is provided as input
   logedInuser: boolean=false;
 
@@ -23,6 +24,8 @@ export class UserHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.role = this.personService.roles;
+    console.log("this role ", this.role);
   }
 
   handleSignOut() {

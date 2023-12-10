@@ -13,3 +13,9 @@
 .mat-column-registryDate {
   flex: 1 1 auto; /* Adjust the flex properties to control column width */
 }
+
+.example-button-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+}

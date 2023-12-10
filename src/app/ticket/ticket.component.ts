@@ -53,11 +53,11 @@ export class TicketComponent implements OnInit {
       'textFontSize': 28,        // Font size.
       'segments':            // Definition of all the segments.
         [
-          { 'fillStyle': '#DAA520', 'text': 'Prize 1' },
-          { 'fillStyle': '#32CD32', 'text': 'Prize 2' },
-          { 'fillStyle': '#00BFFF', 'text': 'Prize 3' },
-          { 'fillStyle': '#FF6347', 'text': 'Prize 4' },
-          { 'fillStyle': '#708090', 'text': 'Prize 5' }
+          { 'fillStyle': '#DAA520', 'text': 'P 1' },
+          { 'fillStyle': '#32CD32', 'text': 'P 2' },
+          { 'fillStyle': '#00BFFF', 'text': 'P 3' },
+          { 'fillStyle': '#FF6347', 'text': 'P 4' },
+          { 'fillStyle': '#708090', 'text': 'P 5' }
         ],
       'animation':               // Definition of the animation
         {
@@ -144,6 +144,21 @@ export class TicketComponent implements OnInit {
   }
   alertPrize(indicatedSegment : any) : void {
     // Do basic alert of the segment text.
-    alert("You have won " + indicatedSegment.text);
+    if (indicatedSegment.text == 'P 1') {
+      alert("Vous avez gagné un infuseur à thé");
+    }
+    if (indicatedSegment.text == 'P 2') {
+      alert("Vous avez gagné une boite de 100g d’un thé détox ou d’infusion");
+    }
+    if (indicatedSegment.text == 'P 3') {
+      alert("Vous avez gagné une boite de 100g d’un thé signature");
+    }
+    if (indicatedSegment.text == 'P 4') {
+      alert("Vous avez gagné un coffret découverte d’une valeur de 39€");
+    }
+    if (indicatedSegment.text == 'P 5') {
+      alert("Vous avez gagné un coffret découverte d’une valeur de 69€");
+    }
+    // alert("You have won " + indicatedSegment.text);
   }
 }
