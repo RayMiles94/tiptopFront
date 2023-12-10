@@ -9,6 +9,7 @@ import { Observable } from "rxjs";
 export class UsermanagerService {
 
   private baseUrl = 'http://localhost:8080/api/users'; // Replace with your API URL
+  private baseUrlStatistics = 'http://localhost:8080/api/statistics'; // Replace with your API URL
   public users : User[] = [];
 
   public constructor(private http: HttpClient) { }
@@ -23,5 +24,11 @@ export class UsermanagerService {
 
   deleteUser(id: number): Observable<any> {
     return this.http.delete<User[]>(`${this.baseUrl}/${id}`);
+  }
+  getSimpleUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseUrl}/simple`);
+  }
+  getPrizes(): Observable<any> {
+    return this.http.get<User[]>(`${this.baseUrlStatistics}/prizes`);
   }
 }

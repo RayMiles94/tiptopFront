@@ -11,6 +11,7 @@ import {PersonService} from "./person.service";
 export class LegacyTicketService {
 
   private baseUrl = 'http://localhost:8080/api/tickets'; // Replace with your API URL
+  private statsUrl = 'http://localhost:8080/api/statistics'; // Replace with your API URL
   private userId!: number;
 
   constructor(private http: HttpClient,
@@ -35,6 +36,14 @@ export class LegacyTicketService {
     );
   }
 
+
+  public getTicketByUserIds(id : number): Observable<any> {
+    return this.getUserId().pipe(
+      switchMap(() => {
+        return this.http.get<any>(`${this.baseUrl}/getTicketByUserId/${id}`);
+      })
+    );
+  }
   public addTicket(tiketNumber: number): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/addTicket`, tiketNumber).pipe(
       map(response => {
@@ -54,5 +63,11 @@ export class LegacyTicketService {
   public updateTicketStatus(ticketNumber: number) {
     return this.http.put<any>(`${this.baseUrl}/updateTicket/${ticketNumber}`, null);
   }
+
+  public getTicketsByPrize(prize: string) {
+    return this.http.get<any>(`${this.statsUrl}/${prize}`);
+  }
+
+
 
 }

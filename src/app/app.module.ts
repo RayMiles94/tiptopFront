@@ -47,6 +47,8 @@ import {MatBadgeModule} from "@angular/material/badge";
 import { WinWheelModule } from './winwheel/winwheel.module';
 import { WinwheelTest } from './winwheeltest/winwheeltest.component';
 import {MatListModule} from "@angular/material/list";
+import {StatisticsComponent} from "./statistics/statistics.component";
+import {MatMenuModule} from "@angular/material/menu";
 
 
 @NgModule({
@@ -70,6 +72,7 @@ import {MatListModule} from "@angular/material/list";
     TicketManagementComponent,
     MyTicketsComponent,
     WinwheelTest,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +99,9 @@ import {MatListModule} from "@angular/material/list";
     MatButtonModule,
     MatIconModule,
     WinWheelModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule,
+    MatMenuModule
   ],
   providers: [LegacyTicketService, SocialSignInService,
     {
