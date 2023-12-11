@@ -10,7 +10,7 @@ import { Person } from '../admin-dashboard/person';
   providedIn: 'root'
 })
 export class PersonService {
-  private baseUrl = 'http://15.237.223.123:8080/api/users';
+  private baseUrl = '15.237.223.123:8080/api/users';
 
   token!: string;
   public loggedUser!: string;
