@@ -47,22 +47,22 @@ export class LogInComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.authState.subscribe((user) => {
-      this.pesonService.loginWithGoogle(user.idToken);
-    });
-
-//For button login
-    (globalThis as any).handleCredentialResponse = (response: any) => {
-      // Handle the response here
-      console.log('Received credential response:', response);
-      this.pesonService.loginWithGoogle(response.credential);
-     // window.location.href = 'https://localhost:4200/myAccount';
-    };
-    this.authService.authState.subscribe(
-      data => {
-        this.loggedIn = (data != null);
-      }
-    );
+//     this.authService.authState.subscribe((user) => {
+//       this.pesonService.loginWithGoogle(user.idToken);
+//     });
+//
+// //For button login
+//     (globalThis as any).handleCredentialResponse = (response: any) => {
+//       // Handle the response here
+//       console.log('Received credential response:', response);
+//       this.pesonService.loginWithGoogle(response.credential);
+//      // window.location.href = 'https://localhost:4200/myAccount';
+//     };
+//     this.authService.authState.subscribe(
+//       data => {
+//         this.loggedIn = (data != null);
+//       }
+//     );
   }
 
   signInWithFB(): void {
