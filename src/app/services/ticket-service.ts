@@ -10,8 +10,8 @@ import {PersonService} from "./person.service";
 })
 export class LegacyTicketService {
 
-  private baseUrl = '15.237.223.123:8080/api/tickets'; // Replace with your API URL
-  private statsUrl = '15.237.223.123:8080/api/statistics'; // Replace with your API URL
+  private baseUrl = '/api/tickets'; // Replace with your API URL
+  private statsUrl = '/api/statistics'; // Replace with your API URL
   private userId!: number;
 
   constructor(private http: HttpClient,
