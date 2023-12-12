@@ -1,0 +1,52 @@
+pipeline {
+    agent any 
+    stages {
+        stage("Build image"){
+            steps {
+
+                sh '''
+                docker build -t thetiptop2023667/tiptopfront:${IMAGETAG}  .
+                '''
+                  echo 'image builded'
+            }
+        }
+        stage("Push image"){
+            steps {
+                 script{
+                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'hub_docker',
+                    usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+                        env.REG_USERNAME = USERNAME
+                        env.REG_PASSWORD = PASSWORD
+                    }
+                    
+
+               sh ''' 
+               docker login --username=${REG_USERNAME} --password=${REG_PASSWORD}
+                docker push thetiptop2023667/tiptopfront:${IMAGETAG} 
+                '''
+
+            }
+            }
+        }
+        stage("deploy image"){
+            steps {
+                 script{
+
+               sh '''
+               ssh root@15.237.223.123;
+               pwd;
+               docker compose  down;
+               docker compose up -d;
+                '''
+
+            }
+            }
+        }
+       
+
+    }
+
+     environment {
+        IMAGETAG = "latest"
+    }
+}
