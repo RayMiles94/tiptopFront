@@ -11,7 +11,7 @@ RUN npm install
 
 COPY . /app/
 
-RUN npm run build --prod --base-href=/http://localhost:4200/
+RUN npm run build --prod
 
 
 # Stage 2: Serve the built Angular app with nginx
