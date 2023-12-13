@@ -5,12 +5,13 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { map, Observable } from 'rxjs';
 import { Person } from '../admin-dashboard/person';
-
+import { environment } from '../../environments/environment';
+const basePath = environment.basePath;
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
-  private baseUrl = '/api/users';
+  // private baseUrl = '/users';
 
   token!: string;
   public loggedUser!: string;
@@ -25,7 +26,7 @@ export class PersonService {
 
 
   login(user: Person) {
-    return this.http.post<Person>(this.baseUrl + '/login', user, { observe: 'response' });
+    return this.http.post<Person>(`${basePath}/users/login`, user, { observe: 'response' });
   }
 
   saveToken(jwt: string) {
@@ -81,24 +82,24 @@ export class PersonService {
   }
 
   public addUser(user: any): Observable<Person> {
-    return this.http.post<any>(this.baseUrl + '/add', user);
+    return this.http.post<any>(basePath + '/add', user);
   }
   public getPersons(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/getAllTickets`);
+    return this.http.get<any[]>(`${basePath}/getAllTickets`);
   }
 
   public setPrize(person: any): Observable<Person[]> {
-    return this.http.put<Person[]>(`${this.baseUrl}/setPrize`, person);
+    return this.http.put<Person[]>(`${basePath}/setPrize`, person);
   }
 
   getWinner(): Observable<Person> {
-    return this.http.get<Person>(`${this.baseUrl}/getYearWinner`);
+    return this.http.get<Person>(`${basePath}/getYearWinner`);
   }
 
   getUserIdByUsername() {
     const params = (this.loggedUser).toString();
     console.log(params);
-    return this.http.get<number>(`${this.baseUrl}/getUserId/${params}`);
+    return this.http.get<number>(`${basePath}/getUserId/${params}`);
   }
 
   loginWithGoogle(token: any): any {
