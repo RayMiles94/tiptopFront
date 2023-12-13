@@ -35,6 +35,7 @@ pipeline {
                sh '''
                ssh root@15.237.223.123;
                pwd;
+               cd /root
                docker compose  down;
                docker compose up -d;
                 '''
