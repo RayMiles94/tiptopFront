@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  basePath:'http://15.237.223.123:8080/api',
+  basePath:'http://localhost:8080/api',
 };
 
 /*
