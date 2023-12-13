@@ -4,7 +4,8 @@ import { catchError, map, Observable, Subscription, switchMap, tap, throwError }
 import { Message } from '../ticket/ticket';
 import {Ticket} from "../user-manager/User";
 import {PersonService} from "./person.service";
-
+import { environment } from '../../environments/environment';
+const basePath = environment.basePath;
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +19,7 @@ export class LegacyTicketService {
     private userService: PersonService) { }
 
   public getTickets(): Observable<Ticket[]> {
-    return this.http.get<Ticket[]>(`${this.baseUrl}/getTickets`);
+    return this.http.get<Ticket[]>(`${basePath}/tickets/getTickets`);
   }
 
   public getUserId(): Observable<any> {
@@ -31,7 +32,7 @@ export class LegacyTicketService {
   public getTicketByUserId(): Observable<any> {
     return this.getUserId().pipe(
       switchMap(() => {
-        return this.http.get<any>(`${this.baseUrl}/getTicketByUserId/${this.userId}`);
+        return this.http.get<any>(`${basePath}/tickets/getTicketByUserId/${this.userId}`);
       })
     );
   }
@@ -40,12 +41,12 @@ export class LegacyTicketService {
   public getTicketByUserIds(id : number): Observable<any> {
     return this.getUserId().pipe(
       switchMap(() => {
-        return this.http.get<any>(`${this.baseUrl}/getTicketByUserId/${id}`);
+        return this.http.get<any>(`${basePath}/tickets/getTicketByUserId/${id}`);
       })
     );
   }
   public addTicket(tiketNumber: number): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/addTicket`, tiketNumber).pipe(
+    return this.http.post<any>(`${basePath}/tickets/addTicket`, tiketNumber).pipe(
       map(response => {
         return response;
       }),
@@ -56,16 +57,16 @@ export class LegacyTicketService {
   }
 
   public checkTicket(ticket: number, userId: number): Observable<any> {
-    const url = `${this.baseUrl}/checkTicket/${ticket}`; // Assuming userId is part of the URL
+    const url = `${basePath}/tickets/checkTicket/${ticket}`; // Assuming userId is part of the URL
     return this.http.post<any>(url, ticket);
   }
 
   public updateTicketStatus(ticketNumber: number) {
-    return this.http.put<any>(`${this.baseUrl}/updateTicket/${ticketNumber}`, null);
+    return this.http.put<any>(`${basePath}/tickets/updateTicket/${ticketNumber}`, null);
   }
 
   public getTicketsByPrize(prize: string) {
-    return this.http.get<any>(`${this.statsUrl}/${prize}`);
+    return this.http.get<any>(`${basePath}/statistics/${prize}`);
   }
 
 
