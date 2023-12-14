@@ -33,14 +33,14 @@ pipeline {
                  script{
 
                sh '''
-               ssh root@15.237.223.123'
+               ssh root@15.237.223.123 '
                pwd;
                 whoami;
                 hostname;
                 
                cd /root
                docker compose  down;
-               docker compose up -d'
+               docker compose up -d '
                 '''
 
             }
