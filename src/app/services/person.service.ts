@@ -82,7 +82,7 @@ export class PersonService {
   }
 
   public addUser(user: any): Observable<Person> {
-    return this.http.post<any>(basePath + '/add', user);
+    return this.http.post<any>(`${basePath}/users/add`,{ observe: 'response' });
   }
   public getPersons(): Observable<any> {
     return this.http.get<any>(`${basePath}/tickets/getAllTickets`,{ observe: 'response' });
