@@ -18,29 +18,29 @@ export class TicketManagementService {
   constructor(private http: HttpClient) { }
 
 
-  public getMytickets():  Observable<Ticket[]> {
-    return this.http.get<Ticket[]>(`${basePath}/tickets/me`);
+  public getMytickets():  Observable<any> {
+    return this.http.get<any>(`${basePath}/tickets/me`,{ observe: 'response' });
   }
-  public getUserTickets(id : number):  Observable<Ticket[]> {
-    return this.http.get<Ticket[]>(`${basePath}/tickets/${id}`);
-  }
-
-
-
-  public addTicketToUser(ticketcreateRequest : TicketCreateRequest):  Observable<Ticket[]> {
-    return this.http.post<Ticket[]>(`${basePath}/tickets`,ticketcreateRequest);
+  public getUserTickets(id : number):  Observable<any> {
+    return this.http.get<any>(`${basePath}/tickets/${id}`,{ observe: 'response' });
   }
 
 
-  public utiliserTicket():  Observable<Prize>{
-    return this.http.post<Prize>(`${basePath}/tickets`,null);
+
+  public addTicketToUser(ticketcreateRequest : TicketCreateRequest):  Observable<any> {
+    return this.http.post<any>(`${basePath}/tickets`,ticketcreateRequest,{ observe: 'response' });
   }
 
-    public getTicketsCount(): Observable<Prize> {
-    return this.http.get<Prize>(`${basePath}/tickets`);
+
+  public utiliserTicket():  Observable<any>{
+    return this.http.post<any>(`${basePath}/tickets`,null,{ observe: 'response' });
+  }
+
+    public getTicketsCount(): Observable<any> {
+      return this.http.get<any>(`${basePath}/tickets`,{ observe: 'response' });
   }
 
   spinWheel(ticketNumberValue : number) {
-    return this.http.post<Prize>(`${basePath}/tickets/play/${ticketNumberValue}`,null);
+    return this.http.post<any>(`${basePath}/tickets/play/${ticketNumberValue}`,null,{ observe: 'response' });
   }
 }

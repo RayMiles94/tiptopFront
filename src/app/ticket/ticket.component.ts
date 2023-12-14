@@ -7,6 +7,8 @@ import { LegacyTicketService } from '../services/ticket-service';
 import { Ticket } from './ticket';
 import {TicketManagementService} from "../ticket-management/ticket-management-service";
 import {Prize} from "../admin-dashboard/person";
+import _default from "chart.js/dist/plugins/plugin.tooltip";
+import numbers = _default.defaults.animations.numbers;
 
 
 declare var  Winwheel: any;
@@ -41,7 +43,7 @@ export class TicketComponent implements OnInit {
    this.getTickets();
    console.log('ticket',this.userProfile)
     this.personService.getUserIdByUsername().subscribe(userId => {
-      this.userId= userId;
+      this.userId= (userId as unknown as number);
     });
 
     this.theWheel = new Winwheel({

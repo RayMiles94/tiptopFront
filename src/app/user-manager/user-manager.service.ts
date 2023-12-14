@@ -16,8 +16,8 @@ export class UsermanagerService {
 
   public constructor(private http: HttpClient) { }
 
-  public getAllUsers():  Observable<User[]> {
-    return this.http.get<User[]>(`${basePath}/users`);
+  public getAllUsers():  Observable<any> {
+    return this.http.get<any>(`${basePath}/users`,{ observe: 'response' });
   }
 
   public SetUsers(users: User[]) {
@@ -25,12 +25,12 @@ export class UsermanagerService {
   }
 
   deleteUser(id: number): Observable<any> {
-    return this.http.delete<User[]>(`${basePath}/users/${id}`);
+    return this.http.delete<User[]>(`${basePath}/users/${id}`,{ observe: 'response' });
   }
-  getSimpleUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${basePath}/users/simple`);
+  getSimpleUsers(): Observable<any> {
+    return this.http.get<any>(`${basePath}/users/simple`,{ observe: 'response' });
   }
   getPrizes(): Observable<any> {
-    return this.http.get<User[]>(`${basePath}/statistics/prizes`);
+    return this.http.get<User[]>(`${basePath}/statistics/prizes`,{ observe: 'response' });
   }
 }
