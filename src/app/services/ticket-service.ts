@@ -25,7 +25,7 @@ export class LegacyTicketService {
   public getUserId(): Observable<any> {
     return this.userService.getUserIdByUsername().pipe(
       tap(e => {
-        this.userId = e;
+        this.userId = (e as unknown as number);
       })
     );
   }
