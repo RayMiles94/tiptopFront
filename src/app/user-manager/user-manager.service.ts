@@ -2,7 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { User } from "./User";
 import { Observable } from "rxjs";
+import {environment} from "../../environments/environment";
 
+const basePath = environment.basePath;
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +17,7 @@ export class UsermanagerService {
   public constructor(private http: HttpClient) { }
 
   public getAllUsers():  Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}`);
+    return this.http.get<User[]>(`${basePath}/users`);
   }
 
   public SetUsers(users: User[]) {
@@ -23,12 +25,12 @@ export class UsermanagerService {
   }
 
   deleteUser(id: number): Observable<any> {
-    return this.http.delete<User[]>(`${this.baseUrl}/${id}`);
+    return this.http.delete<User[]>(`${basePath}/users/${id}`);
   }
   getSimpleUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}/simple`);
+    return this.http.get<User[]>(`${basePath}/users/simple`);
   }
   getPrizes(): Observable<any> {
-    return this.http.get<User[]>(`${this.baseUrlStatistics}/prizes`);
+    return this.http.get<User[]>(`${basePath}/statistics/prizes`);
   }
 }

@@ -4,7 +4,9 @@ import { catchError, map, Observable, Subscription, switchMap, tap, throwError }
 import {Message, TicketCreateRequest} from '../ticket/ticket';
 import {Ticket} from "../user-manager/User";
 import {Prize} from "../admin-dashboard/person";
+import {environment} from "../../environments/environment";
 
+const basePath = environment.basePath;
 @Injectable({
   providedIn: 'root'
 })
@@ -17,28 +19,28 @@ export class TicketManagementService {
 
 
   public getMytickets():  Observable<Ticket[]> {
-    return this.http.get<Ticket[]>(`${this.baseUrl}/me`);
+    return this.http.get<Ticket[]>(`${basePath}/tickets/me`);
   }
   public getUserTickets(id : number):  Observable<Ticket[]> {
-    return this.http.get<Ticket[]>(`${this.baseUrl}/${id}`);
+    return this.http.get<Ticket[]>(`${basePath}/tickets/${id}`);
   }
 
 
 
   public addTicketToUser(ticketcreateRequest : TicketCreateRequest):  Observable<Ticket[]> {
-    return this.http.post<Ticket[]>(`${this.baseUrl}`,ticketcreateRequest);
+    return this.http.post<Ticket[]>(`${basePath}/tickets`,ticketcreateRequest);
   }
 
 
   public utiliserTicket():  Observable<Prize>{
-    return this.http.post<Prize>(`${this.baseUrl}`,null);
+    return this.http.post<Prize>(`${basePath}/tickets`,null);
   }
 
     public getTicketsCount(): Observable<Prize> {
-    return this.http.get<Prize>(`${this.baseUrl}`);
+    return this.http.get<Prize>(`${basePath}/tickets`);
   }
 
   spinWheel(ticketNumberValue : number) {
-    return this.http.post<Prize>(`${this.baseUrl}/play/${ticketNumberValue}`,null);
+    return this.http.post<Prize>(`${basePath}/tickets/play/${ticketNumberValue}`,null);
   }
 }

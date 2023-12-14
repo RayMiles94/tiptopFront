@@ -85,21 +85,21 @@ export class PersonService {
     return this.http.post<any>(basePath + '/add', user);
   }
   public getPersons(): Observable<any[]> {
-    return this.http.get<any[]>(`${basePath}/getAllTickets`);
+    return this.http.get<any[]>(`${basePath}/tickets/getAllTickets`);
   }
 
   public setPrize(person: any): Observable<Person[]> {
-    return this.http.put<Person[]>(`${basePath}/setPrize`, person);
+    return this.http.put<Person[]>(`${basePath}/users/setPrize`, person);
   }
 
   getWinner(): Observable<Person> {
-    return this.http.get<Person>(`${basePath}/getYearWinner`);
+    return this.http.get<Person>(`${basePath}/users/getYearWinner`);
   }
 
   getUserIdByUsername() {
     const params = (this.loggedUser).toString();
     console.log(params);
-    return this.http.get<number>(`${basePath}/getUserId/${params}`);
+    return this.http.get<number>(`${basePath}/users/getUserId/${params}`);
   }
 
   loginWithGoogle(token: any): any {
